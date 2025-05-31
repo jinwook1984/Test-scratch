@@ -42,7 +42,7 @@
 </head>
 <body>
 
-<h2>아래 박스를 긁으시면 QR코드가 나타나며, 이후 환불이 불가합니다</h2>
+<h2>아래 박스를 긁으시면 바나힐 입장 QR코드가 나타나며, 이후 환불이 불가합니다</h2>
 
 <div id="scratchCard">
   <img id="hiddenQR" src="https://api.qrserver.com/v1/create-qr-code/?data=https://fiveon.io&size=300x300" alt="QR Code">
