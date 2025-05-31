@@ -88,4 +88,27 @@
   canvas.addEventListener("mouseup", () => isDrawing = false);
   canvas.addEventListener("mousemove", draw);
 
-  canvas.addEventListener("touchstart
+  canvas.addEventListener("touchstart", () => isDrawing = true);
+  canvas.addEventListener("touchend", () => isDrawing = false);
+  canvas.addEventListener("touchmove", draw);
+
+  function checkRevealProgress() {
+    const pixels = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    let total = pixels.data.length / 4;
+    let transparent = 0;
+
+    for (let i = 0; i < pixels.data.length; i += 4) {
+      if (pixels.data[i + 3] === 0) transparent++;
+    }
+
+    const percent = transparent / total;
+
+    if (percent > 0.7) {
+      canvas.style.display = "none";
+      message.style.display = "block";
+    }
+  }
+</script>
+
+</body>
+</html>
